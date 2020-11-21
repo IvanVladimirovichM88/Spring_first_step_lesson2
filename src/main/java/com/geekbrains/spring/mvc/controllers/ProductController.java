@@ -64,6 +64,6 @@ public class ProductController {
             Model model
     ){
         model.addAttribute("product",productService.findById(id));
-        return "product";
+        return "product_show";
     }
 }

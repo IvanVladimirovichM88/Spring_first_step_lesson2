@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring MVC GeekApp</title>
+</head>
+
+<body>
+<div th:object="${product}">
+    <b>Id:</b>      <label th:text="*{id}"/>
+    <br>
+    <b>Title:</b>  <label th:text="*{title}"/>
+    <br>
+    <b>Brand:</b>  <label th:text="*{brand}"/>
+    <br>
+    <b>Price:</b>  <label th:text="*{price}"/>
+    <br>
+    <b>Description:</b> <label th:text="*{description}"/>
+    <br>
+    <br>
+</div>
+    <a th:href="@{/}">HOME</a>
+</body>
+</html>
