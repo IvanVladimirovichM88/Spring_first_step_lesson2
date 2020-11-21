@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring MVC GeekApp</title>
+</head>
+
+<body>
+    <h1>Список продуктов</h1>
+    <table>
+        <thead>
+        <tr>
+            <td>Id</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td>Brand</td>
+            <td>Price</td>
+            <td>Operations</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${products}">
+            <td th:text="${product.id}"></td>
+            <td th:text="${product.title}"></td>
+            <td th:text="${product.description}"></td>
+            <td th:text="${product.brand}"></td>
+            <td th:text="${product.price}"></td>
+            <td> <a th:href="@{'/products/edit/'+ ${product.id}}">Edit product</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <a th:href="@{/}">HOME</a>
+    <a th:href="@{/products/add}"> Add product </a>
+</body>
+</html>
